@@ -1,0 +1,461 @@
+
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="個人課堂作業與作品展示">
+  <title>我的作品集｜個人作品展示</title>
+
+  <!-- 老師指定：W3.CSS 框架 -->
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/6/w3.css">
+
+  <style>
+    :root {
+      --ink: #20252b;
+      --muted: #68717b;
+      --paper: #f5f6f7;
+      --accent: #b58b62;
+      --line: #e5e7e9;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      color: var(--ink);
+      background: var(--paper);
+      font-family: "Noto Sans TC", "Microsoft JhengHei", sans-serif;
+    }
+
+    .site-nav {
+      background: rgba(255,255,255,.96);
+      border-bottom: 1px solid var(--line);
+      letter-spacing: 1px;
+    }
+
+    .brand {
+      font-weight: 700;
+      letter-spacing: 2px;
+    }
+
+    .hero {
+      color: white;
+      background:
+        linear-gradient(115deg, rgba(24,31,39,.96), rgba(47,58,68,.88)),
+        radial-gradient(circle at 80% 20%, #9a8064, transparent 40%);
+      padding: 100px 24px 88px;
+    }
+
+    .eyebrow {
+      color: #d9b894;
+      letter-spacing: 4px;
+      font-size: 12px;
+      font-weight: 700;
+    }
+
+    .hero p {
+      color: #e0e4e8;
+      line-height: 1.9;
+    }
+
+    .hero-button {
+      display: inline-block;
+      margin-top: 18px;
+      padding: 12px 26px;
+      color: white;
+      border: 1px solid rgba(255,255,255,.6);
+      text-decoration: none;
+      letter-spacing: 1px;
+      transition: .2s;
+    }
+
+    .hero-button:hover {
+      background: white;
+      color: var(--ink);
+    }
+
+    .section {
+      padding: 76px 20px;
+    }
+
+    .section-kicker {
+      color: var(--accent);
+      letter-spacing: 3px;
+      font-size: 12px;
+      font-weight: 700;
+    }
+
+    .section-title {
+      font-size: 30px;
+      letter-spacing: 2px;
+      margin: 10px 0 12px;
+    }
+
+    .section-desc {
+      color: var(--muted);
+      line-height: 1.9;
+    }
+
+    .profile-panel {
+      background: white;
+      border: 1px solid var(--line);
+      padding: 30px;
+      height: 100%;
+    }
+
+    .profile-label {
+      color: var(--muted);
+      font-size: 12px;
+      letter-spacing: 1px;
+    }
+
+    .profile-value {
+      font-size: 17px;
+      font-weight: 600;
+      margin-top: 5px;
+    }
+
+    .work-card {
+      background: white;
+      border: 1px solid var(--line);
+      height: 100%;
+      transition: transform .2s, box-shadow .2s;
+    }
+
+    .work-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 12px 30px rgba(20,30,40,.09);
+    }
+
+    .work-cover {
+      display: block;
+      width: 100%;
+      aspect-ratio: 16 / 10;
+      object-fit: cover;
+      background: #e8e9e9;
+    }
+
+    .work-content {
+      padding: 22px;
+    }
+
+    .work-number {
+      color: var(--accent);
+      font-size: 12px;
+      letter-spacing: 2px;
+      font-weight: 700;
+    }
+
+    .work-title {
+      font-size: 20px;
+      font-weight: 700;
+      margin: 9px 0;
+    }
+
+    .view-link {
+      display: inline-block;
+      color: var(--ink);
+      border-bottom: 1px solid var(--accent);
+      padding-bottom: 4px;
+      text-decoration: none;
+      font-size: 13px;
+      letter-spacing: 1px;
+      margin-top: 12px;
+    }
+
+    footer {
+      background: #20252b;
+      color: #dce0e3;
+      padding: 30px 20px;
+      font-size: 12px;
+      letter-spacing: 1px;
+    }
+
+    @media (max-width: 600px) {
+      .hero {
+        padding: 76px 22px 68px;
+      }
+
+      .section {
+        padding: 58px 16px;
+      }
+
+      .profile-panel {
+        padding: 22px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- 導覽列 -->
+  <div class="w3-top">
+    <div class="w3-bar site-nav w3-padding">
+
+      <a href="#home" class="w3-bar-item w3-button brand">
+        MY PORTFOLIO
+      </a>
+
+      <div class="w3-right w3-hide-small">
+        <a href="#about" class="w3-bar-item w3-button">關於我</a>
+        <a href="#works" class="w3-bar-item w3-button">作品集</a>
+      </div>
+
+      <a href="#works"
+         class="w3-bar-item w3-button w3-right w3-hide-medium w3-hide-large">
+        作品
+      </a>
+
+    </div>
+  </div>
+
+  <!-- 首頁主視覺 -->
+  <header class="hero w3-center" id="home">
+
+    <div class="w3-content" style="max-width:900px">
+
+      <div class="eyebrow">PERSONAL PORTFOLIO</div>
+
+      <p style="font-size:16px">
+        歡迎來到我的個人作品集。<br>
+        這裡整理了課堂中的學習成果與創作紀錄，邀請你一起欣賞。
+      </p>
+
+      <a href="#works" class="hero-button">
+        探索我的作品　↓
+      </a>
+
+    </div>
+
+  </header>
+
+  <!-- 個人資料 -->
+  <section class="section" id="about">
+
+    <div class="w3-content" style="max-width:1000px">
+
+      <div class="w3-row-padding">
+
+        <div class="w3-col l5 m5">
+
+          <div class="section-kicker">ABOUT ME</div>
+
+          <h2 class="section-title">關於我</h2>
+
+          <p class="section-desc">
+            透過每一次作業累積經驗，嘗試不同的創作方式，
+            記錄學習過程中的想法與成果。希望能在這個作品集裡，
+            分享自己的努力與成長。
+          </p>
+
+        </div>
+
+        <div class="w3-col l7 m7">
+
+          <div class="profile-panel">
+
+            <div class="w3-row-padding">
+
+              <div class="w3-col s6 w3-margin-bottom">
+                <div class="profile-label">CLASS｜班級</div>
+                <div class="profile-value">多樂三甲</div>
+              </div>
+
+              <div class="w3-col s6 w3-margin-bottom">
+                <div class="profile-label">STUDENT ID｜學號</div>
+                <div class="profile-value">4B3K0054</div>
+              </div>
+
+              <div class="w3-col s12">
+                <div class="profile-label">NAME｜姓名</div>
+                <div class="profile-value">王茂紜</div>
+              </div>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- 前四個作業 -->
+  <section class="section" id="works" style="background:#fff">
+
+    <div class="w3-content" style="max-width:1100px">
+
+      <div class="w3-center w3-margin-bottom"
+           style="margin-bottom:38px!important">
+
+        <div class="section-kicker">SELECTED WORKS</div>
+
+        <h2 class="section-title">課堂作業展示</h2>
+
+        <p class="section-desc">
+          以下收錄前四份課堂作業，點擊圖片即可前往對應的 Google 相簿。
+        </p>
+
+      </div>
+
+      <div class="w3-row-padding">
+
+        <!-- 作業 1：孔廟 -->
+        <div class="w3-col l6 m6 w3-margin-bottom">
+
+          <article class="work-card">
+
+            <a href="https://photos.app.goo.gl/A4mm29mqYHupnuy66"
+               target="_blank" rel="noopener">
+
+              <img class="work-cover"
+                   src="images/20261001_145800.jpg"
+                   alt="孔廟作業封面圖片">
+
+            </a>
+
+            <div class="work-content">
+
+              <div class="work-number">PROJECT 01</div>
+
+              <h3 class="work-title">孔廟</h3>
+
+              <a class="view-link"
+                 href="https://photos.app.goo.gl/A4mm29mqYHupnuy66"
+                 target="_blank" rel="noopener">
+                查看 Google 相簿 ↗
+              </a>
+
+            </div>
+
+          </article>
+
+        </div>
+
+        <!-- 作業 2：靜物攝影棚 -->
+        <div class="w3-col l6 m6 w3-margin-bottom">
+
+          <article class="work-card">
+
+            <a href="https://photos.app.goo.gl/KsEzHDyhm7Y6qKqG8"
+               target="_blank" rel="noopener">
+
+              <img class="work-cover"
+                   src="images/20261019_201543.jpg"
+                   alt="靜物攝影棚作業封面圖片">
+
+            </a>
+
+            <div class="work-content">
+
+              <div class="work-number">PROJECT 02</div>
+
+              <h3 class="work-title">靜物攝影棚</h3>
+
+              <a class="view-link"
+                 href="https://photos.app.goo.gl/KsEzHDyhm7Y6qKqG8"
+                 target="_blank" rel="noopener">
+                查看 Google 相簿 ↗
+              </a>
+
+            </div>
+
+          </article>
+
+        </div>
+
+        <!-- 作業 3：尋找劍獅 -->
+        <div class="w3-col l6 m6 w3-margin-bottom">
+
+          <article class="work-card">
+
+            <a href="https://photos.app.goo.gl/shSHwuMVQbpidys19"
+               target="_blank" rel="noopener">
+
+              <img class="work-cover"
+                   src="images/20261022_123628.jpg"
+                   alt="尋找劍獅作業封面圖片">
+
+            </a>
+
+            <div class="work-content">
+
+              <div class="work-number">PROJECT 03</div>
+
+              <h3 class="work-title">尋找劍獅</h3>
+
+              <a class="view-link"
+                 href="https://photos.app.goo.gl/shSHwuMVQbpidys19"
+                 target="_blank" rel="noopener">
+                查看 Google 相簿 ↗
+              </a>
+
+            </div>
+
+          </article>
+
+        </div>
+
+        <!-- 作業 4：人像攝影 -->
+        <div class="w3-col l6 m6 w3-margin-bottom">
+
+          <article class="work-card">
+
+            <a href="https://photos.app.goo.gl/tng6qb6RZGe5WwMJ7"
+               target="_blank" rel="noopener">
+
+              <img class="work-cover"
+                   src="images/6548.png"
+                   alt="人像攝影作業封面圖片">
+
+            </a>
+
+            <div class="work-content">
+
+              <div class="work-number">PROJECT 04</div>
+
+              <h3 class="work-title">人像攝影</h3>
+
+              <a class="view-link"
+                 href="https://photos.app.goo.gl/tng6qb6RZGe5WwMJ7"
+                 target="_blank" rel="noopener">
+                查看 Google 相簿 ↗
+              </a>
+
+            </div>
+
+          </article>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- 頁尾 -->
+  <footer class="w3-center">
+
+    <div>MY PORTFOLIO · PERSONAL WORKS</div>
+
+    <div style="margin-top:8px;color:#aeb6bd">
+      © 2026 個人作品集｜All Rights Reserved.
+    </div>
+
+    <a href="#home"
+       style="display:inline-block;margin-top:14px;color:#d9b894;text-decoration:none">
+      BACK TO TOP ↑
+    </a>
+
+  </footer>
+
+</body>
+</html>
